@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+void init_code(){
+   
+    #ifndef ONLINE_JUDGE
+    freopen("input.in", "r", stdin);
+    freopen("output.in", "w", stdout);
+    #endif 
+}
+int main()
+{
+init_code();
+int arr[100000000];
+int n,max,p,q,sum=0;
+max=-1;
+cin>>n;
+for(int i=1;i<=n;i++)
+{
+	cin>>arr[i];
+}
+	int t=0;
+	cin>>t;
+	while(t--)
+	{
+	cin>>p>>q>>m;
+
+	arr[p]+=m;
+	arr[q+1]-=m;
+	}
+	for(int i=1;i<=n;i++)
+	{
+	sum+=arr[i];
+	arr[i]=sum;
+	if(arr[i]>max)
+	{
+	max=arr[i];
+	}
+	}
+	cout<<max;
+
+
+
+
+}
